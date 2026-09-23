@@ -1,0 +1,6 @@
+NEXVARY MC 1.3.0
+- Ten-language UI
+- RTL improvements
+- About and official NEXVARY links
+- Navigation Integrity Gate
+- UI/privacy/F-Droid release gates
