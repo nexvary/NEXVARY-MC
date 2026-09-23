@@ -1,0 +1,12 @@
+NEXVARY MC removes hidden metadata from supported images before you share them.
+
+Features:
+• Fully on-device processing
+• No uploads and no tracking
+• Review detected metadata before cleaning
+• Preserve originals and create cleaned copies
+• Arabic, English, Turkish, Spanish, German, Italian, French, Urdu, Persian and Russian
+• RTL support for Arabic, Urdu and Persian
+• Official NEXVARY About and contact page
+
+The F-Droid build contains no advertising SDK, analytics SDK, Firebase or Google Play Services.
