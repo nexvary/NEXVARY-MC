@@ -1,0 +1,40 @@
+name: Android Release Gate
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  release-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Static release gates
+        run: |
+          python tools/navigation_integrity_gate.py
+          python tools/release_gate.py
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v3
+      - name: Install Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.7'
+      - name: Build and lint
+        run: |
+          gradle --no-daemon clean lintDebug assembleDebug
+      - name: Upload APK and lint report
+        uses: actions/upload-artifact@v4
+        with:
+          name: NEXVARY-MC-debug-gate
+          path: |
+            app/build/outputs/apk/debug/*.apk
+            app/build/reports/lint-results-debug.html
