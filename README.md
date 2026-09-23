@@ -1,29 +1,33 @@
 # NEXVARY MC
 
-Official source repository for **NEXVARY MC**, the NEXVARY Metadata Cleaner for Android.
+Official Android source for NEXVARY Metadata Cleaner.
 
-Current release line: **1.3.0**
+**Release line:** 1.3.0  
+**Package:** `com.nexvary.mc`
+
+## Privacy
+NEXVARY MC is designed for local image metadata cleaning. No advertising SDK, analytics SDK, Firebase or Google Play Services are included in the F-Droid source.
 
 ## Release gates
-- UI Release Gate
+- Android build + lint
 - Navigation Integrity Gate
 - Localization / RTL Gate
-- Security & Privacy Gate
-- F-Droid static compliance checks
-- Android build + lint gate
+- Security & Privacy static checks
+- F-Droid source checks
 
 ## Languages
 Arabic, English, Turkish, Spanish, German, Italian, French, Urdu, Persian and Russian.
 
-## Privacy
-Photo processing is performed locally. The F-Droid release is designed without analytics, advertising SDKs, Firebase, Google Play Services, or an INTERNET permission.
+## Official channels
+Website: https://nexvary.com/  
+Facebook: https://www.facebook.com/share/14p9krEn5ij/  
+Email: info@nexvary.com  
+YouTube: https://www.youtube.com/@NexvaryInc  
+X: https://x.com/Nexvary
 
-## Official NEXVARY channels
-- Website: https://nexvary.com/
-- Facebook: https://www.facebook.com/share/14p9krEn5ij/
-- Email: info@nexvary.com
-- YouTube: https://www.youtube.com/@NexvaryInc
-- X: https://x.com/Nexvary
+## Build
+```
+gradle --no-daemon clean lintDebug assembleDebug
+```
 
-## Status
-Repository initialization in progress. The release is not approved until build, lint, UI and navigation runtime gates pass.
+Apache-2.0 licensed.
